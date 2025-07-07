@@ -1,0 +1,12 @@
+---
+import Logo from "../assets/Logo.svg";
+
+import { LanguageSelect } from "../components/LanguageSelect";
+---
+
+<div
+  class="flex items-center justify-between px-6 md:px-12 top-0 left-0 right-0 sticky select-none"
+>
+  <Logo class="invisible md:visible" />
+  <LanguageSelect client:load />
+</div>
