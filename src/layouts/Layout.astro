@@ -1,8 +1,10 @@
 ---
+import Header from "../components/Header.astro";
+
 import "./src/styles/global.css";
 
 const { pageName } = Astro.props;
-const title = `${pageName} | m4rt.nl`;
+const title = `${pageName} | Doneer.m4rt.nl`;
 ---
 
 <!doctype html>
@@ -17,10 +19,16 @@ const title = `${pageName} | m4rt.nl`;
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body class="bg-neutral-100">
+    <Header />
+
     <slot />
   </body>
 </html>

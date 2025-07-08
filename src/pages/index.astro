@@ -1,10 +1,65 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import { DonationButton } from "../components/DonationButton";
+
+import arrow from "../assets/arrow.png";
+import kgetlengrivier from "../assets/kgetlengrivier.svg";
 
 const pageName = "Home";
 ---
 
 <Layout pageName={pageName}>
-  <Header />
+  <!-- Tooltip -->
+  <div
+    class="text-xs absolute right-20 top-20 z-20 flex flex-col items-end invisible md:visible"
+  >
+    <Image
+      src={arrow}
+      alt="Arrow pointing towards language choosing menu"
+      class=""
+    />
+    <p class="max-w-40 font-secondary">
+      psst... click me to change language! / klik my om die taal te verander!
+    </p>
+  </div>
+
+  <!-- Hero layout -->
+  <div
+    class="flex items-start content-stretch justify-center gap-20 flex-nowrap grow mt-20"
+  >
+    <div class="flex flex-row items-start gap-10">
+      <div class="flex-shrink-0 max-w-md">
+        <Image
+          src={kgetlengrivier}
+          alt="Een kaart die de ligging van Kgetlengrivier in Zuid-Afrika aangeeft"
+          class="w-full h-auto"
+        />
+      </div>
+      <div
+        class="w-auto h-auto flex items-start content-stretch justify-center gap-x-1 gap-y-5 flex-col flex-nowrap"
+      >
+        <h1 class="font-primary text-6xl text-primary-light">
+          <i>Hoi,</i> ik ben Mart.
+        </h1>
+        <p class="text-wrap max-w-150 font-primary text-secondary-light">
+          De meesten van jullie kennen me waarschijnlijk al, maar ik zal me toch
+          even voorstellen. Ik ben Mart, 15 jaar, ik kom uit Barneveld en zit op
+          het JFC. In 2027 ga ik met Shib naar Zuid-Afrika om daar mensen te
+          helpen en bijvoorbeeld te helpen shacks te repareren en nieuwe
+          gebouwen te bouwen. Kijk gerust op de website van Shib als je meer
+          wilt weten. Ik heb € 3000 nodig voor deze reis en dat krijg je niet
+          zomaar bij elkaar. Daarom doen we samen met de groep een aantal acties
+          om geld op te halen. Spontane donaties worden natuurlijk ook altijd op
+          prijs gesteld. Deze website (die ik zelf ontworpen en geprogrammeerd
+          heb) is voor mij ook één van de manieren om geld op te halen.
+        </p>
+        <div class="inline-flex gap-4">
+          <DonationButton client:load />
+          <p class="font-primary"><i><b>of lees hieronder verder</b></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
