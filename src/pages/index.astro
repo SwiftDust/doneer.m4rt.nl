@@ -27,10 +27,12 @@ const pageName = "Home";
 
   <!-- Hero layout -->
   <div
-    class="flex items-start content-stretch justify-center gap-20 flex-nowrap grow mt-20"
+    class="px-4 sm:px-8 flex flex-col md:flex-row items-center content-stretch justify-center gap-10 md:gap-20 flex-nowrap grow mt-5 lg:mt-20"
   >
-    <div class="flex flex-row items-start gap-10">
-      <div class="flex-shrink-0 max-w-md">
+    <div
+      class="flex flex-col md:flex-row items-start gap-6 md:gap-10 w-full max-w-5xl mx-auto"
+    >
+      <div class="flex-shrink-0 max-w-md w-full md:w-auto mb-6 md:mb-0">
         <Image
           src={kgetlengrivier}
           alt="Een kaart die de ligging van Kgetlengrivier in Zuid-Afrika aangeeft"
@@ -38,21 +40,29 @@ const pageName = "Home";
         />
       </div>
       <div
-        class="w-auto h-auto flex items-start content-stretch justify-center gap-x-1 gap-y-5 flex-col flex-nowrap"
+        class="w-full h-auto flex items-start content-stretch justify-center gap-x-1 gap-y-5 flex-col flex-nowrap"
       >
-        <h1 class="font-primary text-6xl text-primary-light">
+        <h1 class="font-primary text-4xl md:text-6xl text-primary-light">
           <i>Hoi,</i> ik ben Mart.
         </h1>
-        <p class="text-wrap max-w-150 font-primary text-secondary-light">
+        <p
+          class="text-wrap max-w-100 lg:max-w-150 font-primary text-secondary-light"
+        >
           De meesten van jullie kennen me waarschijnlijk al, maar ik zal me toch
           even voorstellen. Ik ben Mart, 15 jaar, ik kom uit Barneveld en zit op
-          het JFC. In 2027 ga ik met Shib naar Zuid-Afrika om daar mensen te
-          helpen en bijvoorbeeld te helpen shacks te repareren en nieuwe
-          gebouwen te bouwen. Kijk gerust op de website van Shib als je meer
-          wilt weten. Ik heb € 3000 nodig voor deze reis en dat krijg je niet
-          zomaar bij elkaar. Daarom doen we samen met de groep een aantal acties
-          om geld op te halen. Spontane donaties worden natuurlijk ook altijd op
-          prijs gesteld. Deze website (die ik zelf ontworpen en geprogrammeerd
+          het JFC. In 2027 ga ik met <a
+            href="https://shib.nl"
+            target="_blank"
+            class="text-primary-light underline">Shib</a
+          > naar Zuid-Afrika om daar mensen te helpen en bijvoorbeeld te helpen shacks
+          te repareren en nieuwe gebouwen te bouwen. Kijk gerust op de <a
+            href="https://shib.nl"
+            target="_blank"
+            class="text-primary-light underline">website</a
+          > van Shib als je meer wilt weten. Ik heb € 3000 nodig voor deze reis en
+          dat krijg je niet zomaar bij elkaar. Daarom doen we samen met de groep
+          een aantal acties om geld op te halen. Spontane donaties worden natuurlijk
+          ook altijd op prijs gesteld. Deze website (die ik zelf ontworpen en geprogrammeerd
           heb) is voor mij ook één van de manieren om geld op te halen.
         </p>
         <div class="inline-flex gap-4">
