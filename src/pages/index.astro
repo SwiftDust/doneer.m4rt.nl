@@ -27,7 +27,7 @@ const pageName = "Home";
 
   <!-- Hero layout -->
   <div
-    class="px-4 sm:px-8 flex flex-col md:flex-row items-center content-stretch justify-center gap-10 md:gap-20 flex-nowrap grow mt-5 lg:mt-20"
+    class="px-4 sm:px-8 flex flex-col md:flex-row items-center content-stretch justify-center gap-10 md:gap-20 flex-nowrap grow mt-0 lg:mt-20"
   >
     <div
       class="flex flex-col md:flex-row items-start gap-6 md:gap-10 w-full max-w-5xl mx-auto"
@@ -65,9 +65,11 @@ const pageName = "Home";
           ook altijd op prijs gesteld. Deze website (die ik zelf ontworpen en geprogrammeerd
           heb) is voor mij ook één van de manieren om geld op te halen.
         </p>
-        <div class="inline-flex gap-4">
+        <div class="flex flex-col lg:flex-row gap-2 lg:gap-4">
           <DonationButton client:load />
-          <p class="font-primary"><i><b>of lees hieronder verder</b></i></p>
+          <p class="font-primary px-1">
+            <i><b>of lees hieronder verder</b></i>
+          </p>
         </div>
       </div>
     </div>
