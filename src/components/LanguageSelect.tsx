@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import "@/components/ui/fontawesome-setup";
 import CountryFlag from "react-country-flag";
 
 export function LanguageSelect() {
