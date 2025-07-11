@@ -13,7 +13,8 @@ const pageName = "Home";
 <Layout pageName={pageName}>
   <!-- Tooltip -->
   <div
-    class="text-xs absolute right-20 top-20 z-20 flex flex-col items-end invisible md:visible"
+    id="tooltip"
+    class="text-xs absolute right-20 top-20 z-20 flex flex-col items-end invisible md:visible transition-opacity duration-300"
   >
     <Image
       src={arrow}
@@ -24,6 +25,22 @@ const pageName = "Home";
       psst... click me to change language! / klik my om die taal te verander!
     </p>
   </div>
+
+  <script>
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () => {
+        const tooltip = document.getElementById("tooltip");
+        if (!tooltip) return;
+        if (window.scrollY > 10) {
+          tooltip.style.opacity = "0";
+          tooltip.style.pointerEvents = "none";
+        } else {
+          tooltip.style.opacity = "1";
+          tooltip.style.pointerEvents = "";
+        }
+      });
+    }
+  </script>
 
   <!-- Hero layout -->
   <div
@@ -42,11 +59,13 @@ const pageName = "Home";
       <div
         class="w-full h-auto flex items-start content-stretch justify-center gap-x-1 gap-y-5 flex-col flex-nowrap"
       >
-        <h1 class="font-primary text-4xl md:text-6xl text-primary-light">
+        <h1
+          class="font-primary font-semibold text-4xl md:text-6xl text-primary-light"
+        >
           <i>Hoi,</i> ik ben Mart.
         </h1>
         <p
-          class="text-wrap max-w-100 lg:max-w-150 font-primary text-secondary-light"
+          class="text-wrap max-w-100 lg:max-w-150 font-primary font-extralight text-secondary-light"
         >
           De meesten van jullie kennen me waarschijnlijk al, maar ik zal me toch
           even voorstellen. Ik ben Mart, 15 jaar, ik kom uit Barneveld en zit op
@@ -73,5 +92,19 @@ const pageName = "Home";
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Content under hero -->
+  <div class="relative w-full h-[90px] sm:h-[180px] overflow-hidden">
+    <div
+      class="absolute inset-0 top-0 bg-[url(/star.svg)] bg-no-repeat bg-top w-full h-full pointer-events-none select-none"
+      style="background-size: 300% auto; background-position: top center; z-index: 0;"
+    >
+    </div>
+  </div>
+  <div class="w-full h-auto bg-primary-light">
+    <h1 class="text-white text-4xl md:text-6xl font-primary font-normal">
+      <i>Acties</i>, klik voor meer informatie
+    </h1>
   </div>
 </Layout>
