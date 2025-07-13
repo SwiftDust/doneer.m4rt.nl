@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import logo from "@/assets/logo.svg";
 
 import { LanguageSelect } from "@/components/LanguageSelect";
 ---
@@ -9,7 +8,7 @@ import { LanguageSelect } from "@/components/LanguageSelect";
   class="flex items-center justify-between px-6 md:px-12 top-0 left-0 right-0 sticky select-none"
 >
   <div class="invisible md:visible">
-    <Image src={logo} alt="m4rt.nl Logo" />
+    <img src="/logo.svg" alt="m4rt.nl Logo" />
   </div>
   <LanguageSelect client:load />
 </div>
