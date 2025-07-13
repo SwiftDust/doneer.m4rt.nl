@@ -4,3 +4,4 @@
 - [ ] Mailing list: At wide launch
 - [ ] Donations: At soft launch
 - [ ] Blogs: After finishing frontend
+- [ ] SEO: At wide launch
