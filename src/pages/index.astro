@@ -2,7 +2,8 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
-import { DonationButton } from "../components/DonationButton";
+import { DonationButton } from "@/components/DonationButton";
+import { Actions } from "@/components/Actions";
 
 import arrow from "../assets/arrow.png";
 import kgetlengrivier from "../assets/kgetlengrivier.svg";
@@ -94,17 +95,13 @@ const pageName = "Home";
     </div>
   </div>
 
-  <!-- Content under hero -->
-  <div class="relative w-full h-[90px] sm:h-[180px] overflow-hidden">
-    <div
-      class="absolute inset-0 top-0 bg-[url(/star.svg)] bg-no-repeat bg-top w-full h-full pointer-events-none select-none"
-      style="background-size: 300% auto; background-position: top center; z-index: 0;"
-    >
-    </div>
-  </div>
-  <div class="w-full h-auto bg-primary-light">
-    <h1 class="text-white text-4xl md:text-6xl font-primary font-normal">
+  <!-- Information about actions -->
+  <div class="w-full h-auto bg-primary-light mt-25">
+    <h1 class="text-white text-4xl md:text-6xl font-primary font-normal p-10">
       <i>Acties</i>, klik voor meer informatie
     </h1>
+    <div class="px-20">
+      <Actions client:load />
+    </div>
   </div>
 </Layout>
