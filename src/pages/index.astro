@@ -3,10 +3,13 @@ import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
 import { DonationButton } from "@/components/DonationButton";
+
 import { Actions } from "@/components/Actions";
+import { DonationProgressBar } from "../components/DonationProgressBar";
 
 import arrow from "../assets/arrow.png";
 import kgetlengrivier from "../assets/kgetlengrivier.svg";
+import logonobg from "../assets/logo-nobg.svg";
 
 const pageName = "Home";
 ---
@@ -97,11 +100,51 @@ const pageName = "Home";
 
   <!-- Information about actions -->
   <div class="w-full h-auto bg-primary-light mt-25">
-    <h1 class="text-white text-4xl md:text-6xl font-primary font-normal p-10">
+    <h1
+      class="text-primary-dark text-4xl md:text-6xl font-primary font-normal p-5 md:p-10"
+    >
       <i>Acties</i>, klik voor meer informatie
     </h1>
     <div class="px-20">
       <Actions client:load />
+    </div>
+
+    <!-- Bar that shows how many money has been donated -->
+    <h1
+      class="text-primary-dark text-4xl md:text-6xl font-primary font-normal p-5 md:p-10 text-right"
+    >
+      <i>Hoeveel</i> geld is er al opgehaald?
+    </h1>
+    <div class="px-5 md:px-10 pb-5 md:p-10">
+      <DonationProgressBar client:load current={393} goal={3000} />
+      <p class="text-xs text-gray-200 font-primary py-2 md:p-5">
+        *Wordt één keer in de vier weken geüpdate. Wijzigingen voorbehouden.
+        Geeft mogelijk niet een accurate weergave van het werkelijk opgehaalde
+        bedrag.
+      </p>
+    </div>
+  </div>
+
+  <!-- A call to donate -->
+  <div class="w-full h-auto px-5 md:px-10 py-10 md:py-5">
+    <div class="flex items-center gap-4">
+      <h1
+        class="text-4xl md:text-6xl font-semibold font-primary text-primary-light m-0"
+      >
+        <i>Doneer nu!</i>
+      </h1>
+      <a
+        href="#"
+        class="text-base md:text-lg text-primary-light font-primary underline"
+        >Ga terug naar boven voor de doneerknop</a
+      >
+    </div>
+
+    <div class="flex items-center gap-4">
+      <Image src={logonobg} alt="M4rt.nl Logo" />
+      <p class="text-lg font-primary font-light">
+        zielman@m4rt.nl | +31 6 85550282
+      </p>
     </div>
   </div>
 </Layout>
