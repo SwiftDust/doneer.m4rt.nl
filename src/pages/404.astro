@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { MdKeyboardArrowRight } from "react-icons/md";
+
+const pageName = "404";
+---
+
+<Layout pageName={pageName}>
+  <div
+    class="px-4 sm:px-8 flex flex-col items-center content-stretch justify-center gap-10 md:gap-20 flex-nowrap grow pt-20 lg:pt-32"
+  >
+    <h1 class="text-4xl sm:text-6xl font-primary text-red-400 font-extrabold">
+      404
+    </h1>
+    <h1 class="text-4xl sm:text-6xl font-primary text-primary-light">
+      Vreemd, deze pagina bestaat niet...
+    </h1>
+    <p class="text-sm font-primary -mt-10">
+      Als je er zeker van bent dat deze pagina <i>hoort</i> te bestaan, kun je mij
+      altijd een appje sturen op <b>+31 6 85550282</b>! Groetjes, Mart
+    </p>
+    <Button
+      variant="outline"
+      size="sm"
+      className="font-primary bg-primary-light rounded-2xl text-white hover:bg-blue-400"
+    >
+      <Link href="/" className="flex flex-row gap-2 items-center">
+        Ga terug naar home <MdKeyboardArrowRight />
+      </Link>
+    </Button>
+  </div>
+</Layout>
