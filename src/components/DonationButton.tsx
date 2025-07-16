@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export function DonationButton() {
   const [isSmOrLarger, setIsSmOrLarger] = useState(() =>
@@ -42,7 +43,7 @@ export function DonationButton() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-2xl">
         <DialogHeader className="font-primary">
-          <DialogTitle>Blijf op de hoogte of doneer</DialogTitle>
+          <DialogTitle>Doneer of blijf op de hoogte</DialogTitle>
         </DialogHeader>
         <div className="font-primary flex flex-col items-center gap-2 lg:flex-row lg:items-start lg:gap-4">
           <div className="grid flex-1 gap-2">
@@ -88,8 +89,11 @@ export function DonationButton() {
                     alt="iDeal logo"
                     className="h-6 w-auto"
                   />
-                  iDeal
+                  <Link href="https://betaalverzoek.rabobank.nl/betaalverzoek/?id=e9r1Z9cuTnKGF-ImJkUEmg">
+                    iDeal
+                  </Link>
                 </Button>
+                {/*
                 <Button
                   variant="outline"
                   size="sm"
@@ -97,7 +101,7 @@ export function DonationButton() {
                 >
                   <img src="/visa.png" alt="Visa logo" className="h-2 w-auto" />
                   Creditcard
-                </Button>
+                </Button>*/}
                 <Button
                   variant="outline"
                   size="sm"
@@ -108,7 +112,7 @@ export function DonationButton() {
                     alt="PayPal logo"
                     className="h-4 w-auto"
                   />
-                  PayPal
+                  <Link href="https://paypal.me/notabena">PayPal</Link>
                 </Button>
               </div>
             </div>
