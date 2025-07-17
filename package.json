@@ -13,6 +13,7 @@
 		"i18n:sync": "npm run i18n:generate:pages && npm run i18n:generate:types"
 	},
 	"dependencies": {
+		"@astrojs/node": "^9.3.0",
 		"@astrojs/react": "^4.3.0",
 		"@astrojs/vercel": "^8.2.2",
 		"@fortawesome/fontawesome-svg-core": "^6.7.2",
