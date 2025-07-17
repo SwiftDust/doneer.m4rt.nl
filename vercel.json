@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/index.mjs": {
+      "includeFiles": "astro-i18n.config.mjs"
+    }
+  }
+}
