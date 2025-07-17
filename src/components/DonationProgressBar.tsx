@@ -27,8 +27,7 @@ export const DonationProgressBar: React.FC<DonationProgressBarProps> = ({
           {current}
         </span>
         <span className="text-primary-light font-primary text-base md:text-lg">
-          {t("donationProgressBar.of")}
-          {t("meta.currency")}
+          {t("donationProgressBar.of")} {t("meta.currency")}
           {goal}
         </span>
       </div>
