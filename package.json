@@ -27,6 +27,8 @@
 		"@tailwindcss/vite": "^4.1.11",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
+		"@vercel/analytics": "^1.5.0",
+		"@vercel/speed-insights": "^1.2.0",
 		"astro": "^5.11.0",
 		"astro-i18n": "^2.2.4",
 		"astro-i18next": "^1.0.0-beta.21",
