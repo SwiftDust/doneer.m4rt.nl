@@ -6,7 +6,7 @@ export default defineAstroI18nConfig({
   fallbackLocale: "nl", // fallback locale (on missing translation)
   trailingSlash: "never", // "never" or "always"
   run: "client+server", // "client+server" or "server"
-  showPrimaryLocale: false, // "/en/about" vs "/about"
+  showPrimaryLocale: true, // "/en/about" vs "/about"
   translationLoadingRules: [
     {
       routes: ["/404"],
