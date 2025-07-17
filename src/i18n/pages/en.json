@@ -1,0 +1,29 @@
+{
+  "header": {
+    "home": "Home",
+    "tooltip": "psst... klik hier om de taal aan te passen! / klik my om die taal te verander!"
+  },
+  "alt": {
+    "arrow": "Arrow pointing towards language choosing menu",
+    "kgetlengrivier": "A map that shows the relative position of Kgetlengrivier in South Africa"
+  },
+  "s1": {
+    "header": "<i>Hi,</i> I'm Mart.",
+    "text": "Most of you may probably already know me, but here's a quick introduction of myself. I'm Mart, fifteen years old and in 2027 I'm going to South Africa with an organization called <a href=\"https://shib.nl\" target=\"_blank\" class=\"text-primary-light underline\">Shib</a> to help people there, repair shacks and build new buildings like a daycare. If you want more information, feel free to look on Shib's <a href=\"https://shib.nl\" target=\"_blank\" class=\"text-primary-light underline\">website</a>. I need € 3000 (~ $3500) for this journey and that's a pretty daunting task. That's why we do a lot of actions with the South-Africa group to raise money. But spontaneous donations work, too! This website, which I've designed and programmed myself, is also one of the ways to raise money for me.",
+    "callToAction": "<i><b>or read more below</b></i>"
+  },
+  "s2": {
+    "header": "<i>Actions</i>, click on one for more information"
+  },
+  "s3": {
+    "header": "<i>How many</i> money's been raised?"
+  },
+  "s4": {
+    "current": "560",
+    "goal": "3500",
+    "updateNotice": "*Updated once in ~4 weeks. Changes reserved. Might not give a 100% accurate view of actual money raised."
+  },
+  "s5": {
+    "donateNow": "Donate now!"
+  }
+}

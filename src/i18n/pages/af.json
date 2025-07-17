@@ -1,0 +1,29 @@
+{
+  "header": {
+    "home": "Tuisblad",
+    "tooltip": "psst... click me to change language! / klik hier om de taal aan te passen!"
+  },
+  "alt": {
+    "arrow": "Pyl wat na die taalkieslys wys",
+    "kgetlengrivier": "'n Kaart wat die ligging van Kgetlengrivier in Suid-Afrika wys"
+  },
+  "s1": {
+    "header": "<i>Hi,</i> ek's Mart.",
+    "text": "Sommige van julle ken my waarskynlik reeds, maar ek wil myself tog graag voorstel. Ek's Mart, vyftien jaar oud. Ek is van Barneveld in Nederland en ek is in klas vier (graad tien) van die Johannes Fontanus College. Ek gaan in 2027 met <a href=\"https://shib.nl\" target=\"_blank\" class=\"text-primary-light underline\">Shib</a> Suid-Afrika toe om mense in die townships te help en byvoorbeeld om krotte te repareer en nuwe geboue te bou. Voel gerus vry om op die <a href=\"https://shib.nl\" target=\"_blank\" class=\"text-primary-light underline\">webwerf</a> van Shib te kyk as jy meer inligting wil kry. Ek benodig € 3000 (omstreeks R60.000) vir hierdie reis en dit is nogal wat. Dit is waarom ons met die Suid-Afrika groep 'n aantal aksies onderneem om geld in te samel. Spontaan skenkings word natuurlik altyd gewaardeer. Hierdie webwerf (wat ek self ontwerp en geprogrammeer het) is vir my ook 'n manier om geld in te samel.",
+    "callToAction": "<i><b>of sien meer hieronder</b></i>"
+  },
+  "s2": {
+    "header": "<i>Aksies</i>, klik voor meer inligting"
+  },
+  "s3": {
+    "header": "<i>Hoeveel</i> geld is reeds ingesamel?"
+  },
+  "s4": {
+    "current": "10000",
+    "goal": "60000",
+    "updateNotice": "*Word omstreeks een keer in vier weke tyd opgedateer. Die werkelike bedrag kan anders wees."
+  },
+  "s5": {
+    "donateNow": "Skenk nou!"
+  }
+}

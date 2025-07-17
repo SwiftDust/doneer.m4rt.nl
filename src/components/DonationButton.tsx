@@ -15,7 +15,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
+import { astroI18n, t } from "astro-i18n";
+
+astroI18n.locale;
 
 export function DonationButton() {
   const [isSmOrLarger, setIsSmOrLarger] = useState(() =>
@@ -38,37 +40,36 @@ export function DonationButton() {
           size="sm"
           className="font-primary bg-primary-light rounded-2xl text-white hover:bg-blue-400"
         >
-          Doneer of blijf op de hoogte <MdKeyboardArrowRight />
+          {t("donationButton.donateText")} <MdKeyboardArrowRight />
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-2xl">
         <DialogHeader className="font-primary">
-          <DialogTitle>Doneer of blijf op de hoogte</DialogTitle>
+          <DialogTitle>{t("donationButton.donateText")}</DialogTitle>
         </DialogHeader>
         <div className="font-primary flex flex-col items-center gap-2 lg:flex-row lg:items-start lg:gap-4">
           <div className="grid flex-1 gap-2">
             <DialogDescription className="w-full break-words">
-              Aanmelden om updates per e-mail te ontvangen
+              {t("donationPopup.description")}
             </DialogDescription>
             <Label htmlFor="link" className="sr-only">
               Link
             </Label>
-            <Input id="link" placeholder="jouw@email.nl" />
-            <Input id="name" placeholder="Naam" />
-            <Input id="surname" placeholder="Achternaam" />
+            <Input id="link" placeholder={t("donationPopup.link")} />
+            <Input id="name" placeholder={t("donationPopup.name")} />
+            <Input id="surname" placeholder={t("donationPopup.surname")} />
             <Button
               variant="outline"
               size="sm"
               className="font-primary bg-primary-light rounded-2xl text-white hover:bg-blue-400"
             >
-              Hou me op de hoogte!
+              {t("donationPopup.submit")}
             </Button>
           </div>
           <Separator orientation={isSmOrLarger ? "vertical" : "horizontal"} />
           <div className="grid flex-1 gap-2">
             <DialogDescription className="w-full break-words">
-              Doneren via iDeal QR-code of iDeal link (Nederland), creditkaart
-              of PayPal
+              {t("donationPopup.donateText")}
             </DialogDescription>
             <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
               <div className="hidden justify-center rounded-lg bg-gray-100 p-4 sm:flex md:justify-end">
@@ -89,9 +90,9 @@ export function DonationButton() {
                     alt="iDeal logo"
                     className="h-6 w-auto"
                   />
-                  <Link href="https://betaalverzoek.rabobank.nl/betaalverzoek/?id=e9r1Z9cuTnKGF-ImJkUEmg">
+                  <a href="https://betaalverzoek.rabobank.nl/betaalverzoek/?id=e9r1Z9cuTnKGF-ImJkUEmg">
                     iDeal
-                  </Link>
+                  </a>
                 </Button>
                 {/*
                 <Button
@@ -112,7 +113,7 @@ export function DonationButton() {
                     alt="PayPal logo"
                     className="h-4 w-auto"
                   />
-                  <Link href="https://paypal.me/notabena">PayPal</Link>
+                  <a href="https://paypal.me/notabena">PayPal</a>
                 </Button>
               </div>
             </div>
@@ -120,8 +121,7 @@ export function DonationButton() {
         </div>
         <DialogFooter className="font-primary sm:justify-start">
           <p className="text-xs text-gray-500">
-            Betalen via banktransfer kan ook: NL53 RABO 0316 8722 02 tnv. Mart
-            Zielman met als onderwerp Donatie SHIB-reis Zuid-Afrika 2027.
+            {t("donationPopup.bankTransfer")}
           </p>
         </DialogFooter>
       </DialogContent>

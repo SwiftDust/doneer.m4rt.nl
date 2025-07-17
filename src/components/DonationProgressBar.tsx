@@ -1,4 +1,7 @@
 import React from "react";
+import { astroI18n, t } from "astro-i18n";
+
+astroI18n.locale;
 
 interface DonationProgressBarProps {
   current: number;
@@ -20,10 +23,13 @@ export const DonationProgressBar: React.FC<DonationProgressBarProps> = ({
       ></div>
       <div className="relative z-10 flex w-full items-center justify-between px-8">
         <span className="font-primary text-dark text-lg md:text-xl">
-          €{current}
+          {t("meta.currency")}
+          {current}
         </span>
         <span className="text-primary-light font-primary text-base md:text-lg">
-          van de €{goal}
+          {t("donationProgressBar.of")}
+          {t("meta.currency")}
+          {goal}
         </span>
       </div>
     </div>

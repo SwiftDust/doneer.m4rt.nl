@@ -59,15 +59,15 @@ export function Actions() {
             <div className="p-1">
               <Card className="bg-neutral-100">
                 <CardHeader className="font-primary">
-                  <CardTitle>Actie {index + 1}</CardTitle>
-                  <CardDescription>1 januari - 31 december</CardDescription>
+                  <CardTitle>Action {index + 1}</CardTitle>
+                  <CardDescription>1 January - 31 December</CardDescription>
                   <CardAction>
                     <Button
                       variant="outline"
                       size="sm"
                       className="font-primary bg-primary-light rounded-2xl text-white hover:bg-blue-400"
                     >
-                      Bekijk <MdKeyboardArrowRight />
+                      View <MdKeyboardArrowRight />
                     </Button>
                   </CardAction>
                 </CardHeader>

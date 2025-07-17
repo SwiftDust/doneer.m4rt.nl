@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "description": "Help me raise $3500 (\u20ac3000) for a journey to South Africa in 2027 with an organization that helps people in townships get a better future!",
+    "currency": "$"
+  },
+  "404": {
+    "pageDoesntExist": "Weird, this page doesn't exist...",
+    "explanation": "If you're sure this page <i>should</i> exist, you can always message me on <b>+31 6 85550282</b>. TIA!",
+    "backHome": "Go back home"
+  },
+  "donationButton": {
+    "donateText": "Donate or stay tuned"
+  },
+  "donationPopup": {
+    "description": "Sign up to receive updates by email",
+    "link": "your@email.com",
+    "name": "Name",
+    "surname": "Surname",
+    "submit": "Keep me updated!",
+    "donateText": "Donate via iDeal QR-code or iDeal link (for the Netherlands) or PayPal",
+    "bankTransfer": "Paying via bank transfer is also possible: NL53 RABO 0316 8722 02 att. Mart Zielman with subject: 'Donation SHIB South Africa 2027.'"
+  },
+  "donationProgressBar": {
+    "of": "of"
+  }
+}

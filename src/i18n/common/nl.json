@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "description": "Help mij 3000 euro op te halen voor een reis naar Zuid-Afrika in 2027 met SHIB!",
+    "currency": "\u20ac"
+  },
+  "404": {
+    "pageDoesntExist": "Vreemd, deze pagina bestaat niet...",
+    "explanation": "Als je er zeker van bent dat deze pagina <1>hoort</1> te bestaan, kun je mij altijd een appje sturen op <2>+31 6 85550282</2>! Groetjes, Mart",
+    "backHome": "Ga terug naar home"
+  },
+  "donationButton": {
+    "donateText": "Doneer of blijf op de hoogte"
+  },
+  "donationPopup": {
+    "description": "Aanmelden om updates per e-mail te ontvangen",
+    "link": "jouw@email.nl",
+    "name": "Naam",
+    "surname": "Achternaam",
+    "submit": "Hou me op de hoogte!",
+    "donateText": "Doneren via iDeal QR-code of iDeal link (Nederland) of PayPal",
+    "bankTransfer": "Betalen via banktransfer kan ook: NL53 RABO 0316 8722 02 tnv. Mart Zielman met als onderwerp Donatie SHIB-reis Zuid-Afrika 2027."
+  },
+  "donationProgressBar": {
+    "of": "van de"
+  }
+}

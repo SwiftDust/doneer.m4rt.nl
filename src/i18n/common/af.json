@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "description": "Help my om R60.000 in te samel om 'n reis na Suid-Afrika moontlik te maak met 'n organisasie wat mense in townships help 'n beter lewe te kry!",
+    "currency": "R"
+  },
+  "404": {
+    "pageDoesntExist": "Vreemd, hierdie bladsy bestaan nie...",
+    "explanation": "Als jy seker is hierdie bladsy <i>hoor</i> te bestaan, kan jy my altyd 'n WhatsApp gooi: <b>+31 6 85550282</b>! Groete, Mart",
+    "backHome": "Gaan terug na die tuisblad"
+  },
+  "donationButton": {
+    "donateText": "Skenk of bly op hoogte van die laaste nuus"
+  },
+  "donationPopup": {
+    "description": "Meld aan om updates per e-mail te ontvang",
+    "link": "jou@email.co.za",
+    "name": "Jan",
+    "surname": "Van der Merwe",
+    "submit": "Hou my opgedateer!",
+    "donateText": "Doneer via iDeal QR-code of iDeal link (Nederland) of PayPal",
+    "bankTransfer": "U kan ook deur 'n bankoordrag skenk: NL53 RABO 0316 8722 02 t.b.v. Mart Zielman met as onderwerp: 'Skenking SHIB reis Suid-Afrika 2027.'"
+  },
+  "donationProgressBar": {
+    "of": "van de"
+  }
+}

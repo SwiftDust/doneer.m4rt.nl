@@ -1,0 +1,29 @@
+{
+  "header": {
+    "home": "Home",
+    "tooltip": "psst... click me to change language! / klik my om die taal te verander!"
+  },
+  "alt": {
+    "arrow": "Pijl die het taalmenu aanwijst",
+    "kgetlengrivier": "Een kaart die de ligging van Kgetlengrivier in Zuid-Afrika aangeeft"
+  },
+  "s1": {
+    "header": "<i>Hoi,</i> ik ben Mart.",
+    "text": "De meesten van jullie kennen me waarschijnlijk al, maar ik zal me toch even voorstellen. Ik ben Mart, 15 jaar, ik kom uit Barneveld en zit op het JFC. In 2027 ga ik met <a href=\"https://shib.nl\" target=\"_blank\" class=\"text-primary-light underline\">Shib</a> naar Zuid-Afrika om daar mensen te helpen en bijvoorbeeld te helpen shacks te repareren en nieuwe gebouwen te bouwen. Kijk gerust op de <a href=\"https://shib.nl\" target=\"_blank\" class=\"text-primary-light underline\">website</a> van Shib als je meer wilt weten. Ik heb € 3000 nodig voor deze reis en dat krijg je niet zomaar bij elkaar. Daarom doen we samen met de groep een aantal acties om geld op te halen. Spontane donaties worden natuurlijk ook altijd op prijs gesteld. Deze website (die ik zelf ontworpen en geprogrammeerd heb) is voor mij ook één van de manieren om geld op te halen.",
+    "callToAction": "<i><b>of lees hieronder verder</b></i>"
+  },
+  "s2": {
+    "header": "<i>Acties</i>, klik voor meer informatie"
+  },
+  "s3": {
+    "header": "<i>Hoeveel</i> geld is er al opgehaald?"
+  },
+  "s4": {
+    "current": "483",
+    "goal": "3000",
+    "updateNotice": "*Wordt één keer in de vier weken geüpdate. Wijzigingen voorbehouden. Geeft mogelijk niet een accurate weergave van het werkelijk opgehaalde bedrag."
+  },
+  "s5": {
+    "donateNow": "Doneer nu!"
+  }
+}

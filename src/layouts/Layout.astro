@@ -2,13 +2,15 @@
 import Header from "@/components/Header.astro";
 
 import "@/styles/global.css";
+import { astroI18n, t } from "astro-i18n";
 
 const { pageName } = Astro.props;
 const title = `${pageName} | Doneer.m4rt.nl`;
+astroI18n.locale;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={astroI18n.locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -24,6 +26,7 @@ const title = `${pageName} | Doneer.m4rt.nl`;
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={t("meta.description")} />
     <title>{title}</title>
   </head>
   <body class="bg-neutral-100">

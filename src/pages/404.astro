@@ -3,8 +3,10 @@ import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { astroI18n, t } from "astro-i18n";
 
-const pageName = "404";
+astroI18n.locale;
+const pageName = t("header.404");
 ---
 
 <Layout pageName={pageName}>
@@ -15,11 +17,10 @@ const pageName = "404";
       404
     </h1>
     <h1 class="text-4xl sm:text-6xl font-primary text-primary-light">
-      Vreemd, deze pagina bestaat niet...
+      {t("404.pageDoesntExist")}
     </h1>
     <p class="text-sm font-primary -mt-10">
-      Als je er zeker van bent dat deze pagina <i>hoort</i> te bestaan, kun je mij
-      altijd een appje sturen op <b>+31 6 85550282</b>! Groetjes, Mart
+      {t("404.explanation")}
     </p>
     <Button
       variant="outline"
@@ -27,7 +28,8 @@ const pageName = "404";
       className="font-primary bg-primary-light rounded-2xl text-white hover:bg-blue-400"
     >
       <Link href="/" className="flex flex-row gap-2 items-center">
-        Ga terug naar home <MdKeyboardArrowRight />
+        {t("404.backHome")}
+        <MdKeyboardArrowRight />
       </Link>
     </Button>
   </div>

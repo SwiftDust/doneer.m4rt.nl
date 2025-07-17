@@ -1,0 +1,17 @@
+{
+  "donationButton": {
+    "donateText": "Skenk of bly op hoogte van die laaste nuus"
+  },
+  "donationPopup": {
+    "description": "Meld aan om updates per e-mail te ontvang",
+    "link": "jou@email.co.za",
+    "name": "Jan",
+    "surname": "Van der Merwe",
+    "submit": "Hou my opgedateer!",
+    "donateText": "Doneer via iDeal QR-code of iDeal link (Nederland) of PayPal",
+    "bankTransfer": "U kan ook deur 'n bankoordrag skenk: NL53 RABO 0316 8722 02 t.b.v. Mart Zielman met as onderwerp: 'Skenking SHIB reis Suid-Afrika 2027.'"
+  },
+  "donationProgressBar": {
+    "of": "van de"
+  }
+}

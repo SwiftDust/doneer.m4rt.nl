@@ -12,14 +12,43 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import CountryFlag from "react-country-flag";
 
+const LOCALES = ["nl", "en", "af"];
+
 export function LanguageSelect() {
   const languages = [
-    { label: "Nederlands", value: "dutch", code: "NL", country: "NL" },
-    { label: "Engels", value: "english", code: "US", country: "US" },
-    { label: "Afrikaans", value: "afrikaans", code: "AF", country: "ZA" },
+    { label: "Nederlands", value: "nl", code: "NL", country: "NL" },
+    { label: "English", value: "en", code: "US", country: "US" },
+    { label: "Afrikaans", value: "af", code: "AF", country: "ZA" },
   ];
-  const [language, setLanguage] = React.useState("dutch");
+
+  const getCurrentLocale = () => {
+    if (typeof window === "undefined") return "nl";
+    const pathLang = window.location.pathname.split("/")[1];
+    return LOCALES.includes(pathLang) ? pathLang : "nl";
+  };
+
+  const [language, setLanguage] = React.useState(getCurrentLocale());
+
+  React.useEffect(() => {
+    setLanguage(getCurrentLocale());
+  }, []);
+
   const selected = languages.find((l) => l.value === language) || languages[0];
+
+  const handleLanguageChange = (langValue: string) => {
+    if (typeof window === "undefined") return;
+    const currentPath = window.location.pathname;
+    const pathParts = currentPath.split("/");
+    if (pathParts[0] === "") pathParts.shift();
+    if (LOCALES.includes(pathParts[0])) {
+      pathParts[0] = langValue;
+    } else {
+      pathParts.unshift(langValue);
+    }
+    const newPath = "/" + pathParts.join("/");
+    window.location.pathname = newPath;
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="font-primary rounded-2xl">
@@ -31,7 +60,11 @@ export function LanguageSelect() {
       <DropdownMenuContent className="min-w-6rem font-primary">
         <DropdownMenuRadioGroup value={language} onValueChange={setLanguage}>
           {languages.map((lang) => (
-            <DropdownMenuRadioItem key={lang.value} value={lang.value}>
+            <DropdownMenuRadioItem
+              key={lang.value}
+              value={lang.value}
+              onClick={() => handleLanguageChange(lang.value)}
+            >
               <CountryFlag
                 countryCode={lang.country}
                 svg

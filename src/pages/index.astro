@@ -6,12 +6,14 @@ import { DonationButton } from "@/components/DonationButton";
 
 import { Actions } from "@/components/Actions";
 import { DonationProgressBar } from "../components/DonationProgressBar";
+import { astroI18n, t } from "astro-i18n";
 
 import arrow from "@/assets/arrow.png";
 import kgetlengrivier from "@/assets/kgetlengrivier.svg";
 import logonobg from "@/assets/logo-nobg.svg";
 
-const pageName = "Home";
+const pageName = t("header.home");
+astroI18n.locale;
 ---
 
 <Layout pageName={pageName}>
@@ -20,13 +22,9 @@ const pageName = "Home";
     id="tooltip"
     class="text-xs absolute right-20 top-20 z-20 flex flex-col items-end invisible md:visible transition-opacity duration-300"
   >
-    <Image
-      src={arrow}
-      alt="Arrow pointing towards language choosing menu"
-      class=""
-    />
+    <Image src={arrow} alt={t("alt.arrow")} class="" />
     <p class="max-w-40 font-secondary">
-      psst... click me to change language! / klik my om die taal te verander!
+      {t("header.tooltip")}
     </p>
   </div>
 
@@ -56,7 +54,7 @@ const pageName = "Home";
       <div class="flex-shrink-0 max-w-md w-full md:w-auto mb-6 md:mb-0">
         <Image
           src={kgetlengrivier}
-          alt="Een kaart die de ligging van Kgetlengrivier in Zuid-Afrika aangeeft"
+          alt={t("alt.kgetlengrivier")}
           class="w-full h-auto"
         />
       </div>
@@ -65,34 +63,15 @@ const pageName = "Home";
       >
         <h1
           class="font-primary font-semibold text-4xl md:text-6xl text-primary-light"
-        >
-          <i>Hoi,</i> ik ben Mart.
-        </h1>
+          set:html={t("s1.header")}
+        />
         <p
           class="text-wrap max-w-100 lg:max-w-150 font-primary font-extralight text-secondary-light"
-        >
-          De meesten van jullie kennen me waarschijnlijk al, maar ik zal me toch
-          even voorstellen. Ik ben Mart, 15 jaar, ik kom uit Barneveld en zit op
-          het JFC. In 2027 ga ik met <a
-            href="https://shib.nl"
-            target="_blank"
-            class="text-primary-light underline">Shib</a
-          > naar Zuid-Afrika om daar mensen te helpen en bijvoorbeeld te helpen shacks
-          te repareren en nieuwe gebouwen te bouwen. Kijk gerust op de <a
-            href="https://shib.nl"
-            target="_blank"
-            class="text-primary-light underline">website</a
-          > van Shib als je meer wilt weten. Ik heb € 3000 nodig voor deze reis en
-          dat krijg je niet zomaar bij elkaar. Daarom doen we samen met de groep
-          een aantal acties om geld op te halen. Spontane donaties worden natuurlijk
-          ook altijd op prijs gesteld. Deze website (die ik zelf ontworpen en geprogrammeerd
-          heb) is voor mij ook één van de manieren om geld op te halen.
-        </p>
+          set:html={t("s1.text")}
+        />
         <div class="flex flex-col lg:flex-row gap-2 lg:gap-4">
           <DonationButton client:load />
-          <p class="font-primary px-1">
-            <i><b>of lees hieronder verder</b></i>
-          </p>
+          <p class="font-primary px-1" set:html={t("s1.callToAction")} />
         </div>
       </div>
     </div>
@@ -102,9 +81,8 @@ const pageName = "Home";
   <div class="w-full h-auto bg-primary-light mt-25">
     <h1
       class="text-primary-dark text-4xl md:text-6xl font-primary font-normal p-5 md:p-10"
-    >
-      <i>Acties</i>, klik voor meer informatie
-    </h1>
+      set:html={t("s2.header")}
+    />
     <div class="px-20">
       <Actions client:load />
     </div>
@@ -112,15 +90,16 @@ const pageName = "Home";
     <!-- Bar that shows how many money has been donated -->
     <h1
       class="text-primary-dark text-4xl md:text-6xl font-primary font-normal p-5 md:p-10 text-right"
-    >
-      <i>Hoeveel</i> geld is er al opgehaald?
-    </h1>
+      set:html={t("s3.header")}
+    />
     <div class="px-5 md:px-10 pb-5 md:p-10">
-      <DonationProgressBar client:load current={393} goal={3000} />
+      <DonationProgressBar
+        client:load
+        current={parseInt(t("s4.current"))}
+        goal={parseInt(t("s4.goal"))}
+      />
       <p class="text-xs text-gray-200 font-primary py-2 md:p-5">
-        *Wordt één keer in de vier weken geüpdate. Wijzigingen voorbehouden.
-        Geeft mogelijk niet een accurate weergave van het werkelijk opgehaalde
-        bedrag.
+        {t("s4.updateNotice")}
       </p>
     </div>
   </div>
@@ -130,14 +109,9 @@ const pageName = "Home";
     <div class="flex items-center gap-4">
       <h1
         class="text-4xl md:text-6xl font-semibold font-primary text-primary-light m-0"
-      >
-        <i>Doneer nu!</i>
-      </h1>
-      <a
-        href="#"
-        class="text-base md:text-lg text-primary-light font-primary underline"
-        >Ga terug naar boven voor de doneerknop</a
-      >
+        set:html={t("s5.donateNow")}
+      />
+      <DonationButton client:load />
     </div>
 
     <div class="flex items-center gap-4">
