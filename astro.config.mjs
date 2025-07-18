@@ -3,6 +3,7 @@ import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import node from "@astrojs/node";
+import netlify from "@astrojs/netlify";
 import "./astro-i18n.config.ts";
 
 export default defineConfig({
@@ -15,8 +16,6 @@ export default defineConfig({
       },
     },
   },
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: netlify(),
   integrations: [react()],
 });
