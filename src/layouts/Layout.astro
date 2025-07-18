@@ -5,6 +5,7 @@ import "@/styles/global.css";
 import { astroI18n, t } from "astro-i18n";
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import favicon from "@/assets/favicon.svg";
 
 const { pageName } = Astro.props;
 const title = `${pageName} | Doneer.m4rt.nl`;
@@ -16,7 +17,7 @@ astroI18n.locale;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={favicon.src} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
