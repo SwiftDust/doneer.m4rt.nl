@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import node from "@astrojs/node";
 import netlify from "@astrojs/netlify";
-import "./astro-i18n.config.ts";
+import astroI18n from "astro-i18n";
 
 export default defineConfig({
   output: "server",
@@ -17,5 +17,5 @@ export default defineConfig({
     },
   },
   adapter: netlify(),
-  integrations: [react()],
+  integrations: [react(), astroI18n()],
 });
