@@ -15,6 +15,10 @@ export default defineConfig({
       },
     },
   },
-  adapter: netlify(),
+  adapter: node({
+    mode: "standalone",
+    host: "0.0.0.0",
+    port: 4321,
+  }),
   integrations: [react()],
 });
