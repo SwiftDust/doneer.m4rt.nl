@@ -12,6 +12,10 @@ import arrow from "@/assets/arrow.png";
 import kgetlengrivier from "@/assets/kgetlengrivier.svg";
 import logonobg from "@/assets/logo-nobg.svg";
 
+if (Astro.url.pathname === "/") {
+  return Astro.redirect("/nl");
+}
+
 const pageName = t("header.home");
 astroI18n.locale;
 ---
