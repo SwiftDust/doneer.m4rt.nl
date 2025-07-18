@@ -4,9 +4,9 @@
 type PrimaryLocale = "nl"
 type SecondaryLocale = "en"|"af"
 type Locale = PrimaryLocale | SecondaryLocale
-type RouteParameters = {"/404":undefined;"/":undefined;}
+type RouteParameters = {"/404":undefined;"/":undefined;"/nl":undefined;}
 type Route = keyof RouteParameters
-type TranslationVariables = {"404.pageDoesntExist":object|undefined;"404.explanation":object|undefined;"404.backHome":object|undefined;"meta.description":object|undefined;}
+type TranslationVariables = {"header.home":object|undefined;"header.tooltip":object|undefined;"alt.arrow":object|undefined;"alt.kgetlengrivier":object|undefined;"s1.header":object|undefined;"s1.text":object|undefined;"s1.callToAction":object|undefined;"s2.header":object|undefined;"s3.header":object|undefined;"s4.current":object|undefined;"s4.goal":object|undefined;"s4.updateNotice":object|undefined;"s5.donateNow":object|undefined;"404.pageDoesntExist":object|undefined;"404.explanation":object|undefined;"404.backHome":object|undefined;"meta.description":object|undefined;"meta.currency":object|undefined;"donationButton.donateText":object|undefined;"donationPopup.description":object|undefined;"donationPopup.link":object|undefined;"donationPopup.name":object|undefined;"donationPopup.surname":object|undefined;"donationPopup.submit":object|undefined;"donationPopup.donateText":object|undefined;"donationPopup.bankTransfer":object|undefined;"donationProgressBar.of":object|undefined;}
 type Translation = keyof TranslationVariables
 type Environment = "none"|"node"|"browser"
 declare module "astro-i18n" {

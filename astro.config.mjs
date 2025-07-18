@@ -3,7 +3,7 @@ import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import node from "@astrojs/node";
-import "./astro-i18n.config.mjs";
+import "./astro-i18n.config.ts";
 
 export default defineConfig({
   output: "server",
