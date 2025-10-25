@@ -4,4 +4,4 @@
 - [ ] Mailing list: At wide launch
 - [x] Donations: At soft launch
 - [ ] Blogs: At wide launch
-- [ ] SEO: At wide launch
+- [x] SEO: At wide launch
