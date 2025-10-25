@@ -4,6 +4,7 @@ import Header from "@/components/Header.astro";
 import "@/styles/global.css";
 import { astroI18n, t } from "astro-i18n";
 import favicon from "@/assets/favicon.svg";
+import { SEO } from "astro-seo";
 
 const { pageName } = Astro.props;
 const title = `${pageName} | Doneer.m4rt.nl`;
@@ -34,6 +35,10 @@ astroI18n.locale;
       src="https://cloud.umami.is/script.js"
       data-website-id="07f8e60e-bf97-4770-a188-4c2cf7a382a7"></script>
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <SEO
+      title={title}
+      description="Doneer nu aan Mart Zielman voor een reis met SHIB en het JFC van Barneveld naar Zuid-Afrika."
+    />
   </head>
   <body class="bg-neutral-100">
     <Header />
