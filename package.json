@@ -16,6 +16,7 @@
     "@astrojs/netlify": "^6.5.1",
     "@astrojs/node": "^9.3.0",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/vercel": "^8.2.2",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",

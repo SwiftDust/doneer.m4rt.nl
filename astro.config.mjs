@@ -3,10 +3,12 @@ import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import node from "@astrojs/node";
-import netlify from "@astrojs/netlify";
+
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   output: "server",
+  site: "https://doneer.m4rt.nl",
   vite: {
     plugins: [tailwindcss()],
     resolve: {
@@ -21,5 +23,5 @@ export default defineConfig({
     port: 4321,
   }),
   assets: "public",
-  integrations: [react()],
+  integrations: [react(), sitemap()],
 });
