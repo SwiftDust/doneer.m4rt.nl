@@ -1,0 +1,90 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout pageName={frontmatter.title}>
+  <article class="px-4 sm:px-8 py-10 max-w-5xl mx-auto">
+    <header class="mb-6">
+      <h1
+        class="font-primary font-semibold text-4xl md:text-5xl text-primary-light mb-3"
+      >
+        {frontmatter.title}
+      </h1>
+
+      <div class="flex items-center gap-4 text-sm text-secondary-light">
+        <div class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            class="w-4 h-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3"></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6a9 9 0 100 18 9 9 0 000-18z"></path>
+          </svg>
+          <time datetime={frontmatter.pubDate.toString()}>
+            {frontmatter.pubDate.toString().slice(0, 10)}
+          </time>
+        </div>
+        <span>•</span>
+        <div class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            class="w-4 h-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+            <circle
+              cx="12"
+              cy="7"
+              r="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"></circle>
+          </svg>
+          <span>{frontmatter.author}</span>
+        </div>
+      </div>
+
+      {
+        frontmatter.description ? (
+          <p class="mt-4 text-lg font-primary font-extralight text-secondary-light">
+            <em>{frontmatter.description}</em>
+          </p>
+        ) : null
+      }
+    </header>
+
+    {
+      frontmatter.image && frontmatter.image.url ? (
+        <div class="mb-8 flex justify-center">
+          <img
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt ?? frontmatter.title}
+            class="w-full max-w-3xl rounded-lg shadow-md"
+          />
+        </div>
+      ) : null
+    }
+
+    <div class="prose prose-lg max-w-none mx-auto">
+      <slot />
+    </div>
+  </article>
+</Layout>
