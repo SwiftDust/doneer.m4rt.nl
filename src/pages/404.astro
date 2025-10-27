@@ -19,9 +19,7 @@ const pageName = t("header.404");
     <h1 class="text-4xl sm:text-6xl font-primary text-primary-light">
       {t("404.pageDoesntExist")}
     </h1>
-    <p class="text-sm font-primary -mt-10">
-      {t("404.explanation")}
-    </p>
+    <p class="text-sm font-primary -mt-10" set:html={t("404.explanation")} />
     <Button
       variant="outline"
       size="sm"
