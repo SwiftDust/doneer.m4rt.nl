@@ -95,25 +95,51 @@ export function Actions({ posts }: ActionsProps) {
                     {post.data.startDate.toLocaleDateString("en-US", {
                       day: "numeric",
                       month: "long",
-                    })}{" "}
-                    -{" "}
-                    {post.data.endDate.toLocaleDateString("en-US", {
-                      day: "numeric",
-                      month: "long",
                     })}
+                    {(() => {
+                      const tags = post.data.tags.map((t) => t.toLowerCase());
+                      const isFinished = tags.includes("finished");
+                      const isInProgress = tags.includes("in progress");
+                      if (post.data.endDate) {
+                        return (
+                          " - " +
+                          post.data.endDate.toLocaleDateString("en-US", {
+                            day: "numeric",
+                            month: "long",
+                          })
+                        );
+                      } else if (isFinished) {
+                        return "";
+                      } else if (isInProgress) {
+                        return " - now";
+                      } else {
+                        return "";
+                      }
+                    })()}
                   </CardDescription>
                   <CardAction>
                     <Button
                       variant="outline"
                       size="sm"
                       className="font-primary bg-primary-light rounded-2xl text-white hover:bg-blue-400"
+                      asChild
                     >
-                      View <MdKeyboardArrowRight />
+                      <a href={`/posts/${post.id}`}>
+                        View <MdKeyboardArrowRight />
+                      </a>
                     </Button>
                   </CardAction>
                 </CardHeader>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <CustomPlaceholder width={400} height={300} />
+                  {post.data.image ? (
+                    <img
+                      src={post.data.image.url}
+                      alt={post.data.image.alt}
+                      className="h-full w-full rounded-lg object-cover"
+                    />
+                  ) : (
+                    <CustomPlaceholder width={400} height={300} />
+                  )}
                 </CardContent>
               </Card>
             </div>

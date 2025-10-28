@@ -38,11 +38,30 @@ const { frontmatter } = Astro.props;
                 day: "numeric",
                 month: "long",
               })
-            } - {
-              frontmatter.endDate.toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "long",
-              })
+            }
+            {
+              (() => {
+                const tags = frontmatter.tags.map((t: string) =>
+                  t.toLowerCase()
+                );
+                const isFinished = tags.includes("finished");
+                const isInProgress = tags.includes("in progress");
+                if (frontmatter.endDate) {
+                  return (
+                    " - " +
+                    frontmatter.endDate.toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                    })
+                  );
+                } else if (isFinished) {
+                  return "";
+                } else if (isInProgress) {
+                  return " - now";
+                } else {
+                  return "";
+                }
+              })()
             }
           </time>
         </div>
@@ -93,7 +112,7 @@ const { frontmatter } = Astro.props;
       ) : null
     }
 
-    <div class="prose prose-lg max-w-none mx-auto">
+    <div class="prose prose-lg prose-stone max-w-none mx-auto font-secondary">
       <slot />
     </div>
   </article>

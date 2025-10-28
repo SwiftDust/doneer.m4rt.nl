@@ -6,6 +6,8 @@ import node from "@astrojs/node";
 
 import sitemap from "@astrojs/sitemap";
 
+import mdx from "@astrojs/mdx";
+
 export default defineConfig({
   output: "server",
   site: "https://doneer.m4rt.nl",
@@ -23,5 +25,16 @@ export default defineConfig({
     port: 4321,
   }),
   assets: "public",
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap(), mdx()],
+  markdown: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    shikiConfig: {
+      theme: "github-light",
+      wrap: true,
+    },
+    // Enable custom components in Markdown
+    gfm: true,
+    extendDefaultPlugins: true,
+  },
 });
