@@ -32,8 +32,18 @@ const { frontmatter } = Astro.props;
               stroke-width="2"
               d="M12 6a9 9 0 100 18 9 9 0 000-18z"></path>
           </svg>
-          <time datetime={frontmatter.pubDate.toString()}>
-            {frontmatter.pubDate.toString().slice(0, 10)}
+          <time>
+            {
+              frontmatter.startDate.toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+              })
+            } - {
+              frontmatter.endDate.toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+              })
+            }
           </time>
         </div>
         <span>•</span>

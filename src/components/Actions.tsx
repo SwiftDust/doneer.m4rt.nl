@@ -16,6 +16,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import type { CollectionEntry } from "astro:content";
+
+interface ActionsProps {
+  posts: CollectionEntry<"blog">[];
+}
+
 function CustomPlaceholder({
   width,
   height,
@@ -45,7 +51,7 @@ function CustomPlaceholder({
   );
 }
 
-export function Actions() {
+export function Actions({ posts }: ActionsProps) {
   return (
     <Carousel
       opts={{
@@ -54,13 +60,23 @@ export function Actions() {
       className="w-full"
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {posts.map((post, index) => (
           <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
             <div className="p-1">
               <Card className="bg-neutral-100">
                 <CardHeader className="font-primary">
-                  <CardTitle>Action {index + 1}</CardTitle>
-                  <CardDescription>1 January - 31 December</CardDescription>
+                  <CardTitle>{post.data.title}</CardTitle>
+                  <CardDescription>
+                    {post.data.startDate.toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                    })}{" "}
+                    -{" "}
+                    {post.data.endDate.toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                    })}
+                  </CardDescription>
                   <CardAction>
                     <Button
                       variant="outline"

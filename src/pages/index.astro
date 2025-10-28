@@ -3,10 +3,12 @@ import { Image } from "astro:assets";
 
 import Layout from "@/layouts/Layout.astro";
 import { DonationButton } from "@/components/DonationButton";
-
+import { getCollection } from "astro:content";
 import { Actions } from "@/components/Actions";
 import { DonationProgressBar } from "@/components/DonationProgressBar";
 import { astroI18n, t } from "astro-i18n";
+
+const posts = await getCollection("blog");
 
 import arrow from "@/assets/arrow.png";
 import kgetlengrivier from "@/assets/kgetlengrivier.svg";
@@ -88,7 +90,7 @@ astroI18n.locale;
       set:html={t("s2.header")}
     />
     <div class="px-20">
-      <Actions client:load />
+      <Actions client:load posts={posts} />
     </div>
 
     <!-- Bar that shows how many money has been donated -->
