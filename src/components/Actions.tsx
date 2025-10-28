@@ -135,7 +135,7 @@ export function Actions({ posts }: ActionsProps) {
                     <img
                       src={post.data.image.url}
                       alt={post.data.image.alt}
-                      className="h-300 w-400 rounded-lg object-cover"
+                      className="aspect-square h-1/1 w-1/1 rounded-lg object-cover"
                     />
                   ) : (
                     <CustomPlaceholder width={400} height={300} />
