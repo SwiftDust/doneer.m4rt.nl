@@ -22,5 +22,10 @@
   },
   "donationProgressBar": {
     "of": "of"
+  },
+  "actions": {
+    "finished": "Finished",
+    "inprogress": "In progress",
+    "comingsoon": "Coming soon"
   }
 }

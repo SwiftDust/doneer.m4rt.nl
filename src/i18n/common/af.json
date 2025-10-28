@@ -22,5 +22,10 @@
   },
   "donationProgressBar": {
     "of": "van de"
+  },
+  "actions": {
+    "finished": "Klaar",
+    "inprogress": "Besig",
+    "comingsoon": "Kom binnekort"
   }
 }

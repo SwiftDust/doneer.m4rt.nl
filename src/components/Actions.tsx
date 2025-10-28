@@ -17,10 +17,25 @@ import {
 } from "@/components/ui/carousel";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import type { CollectionEntry } from "astro:content";
+import { astroI18n, t } from "astro-i18n";
+astroI18n.locale;
 
 interface ActionsProps {
   posts: CollectionEntry<"blog">[];
 }
+
+const getTagColor = (tag: string) => {
+  switch (tag.toLowerCase()) {
+    case "finished":
+      return "bg-red-500 text-white";
+    case "in progress":
+      return "bg-green-500 text-white";
+    case "coming soon":
+      return "bg-orange-500 text-white";
+    default:
+      return "bg-gray-200 text-gray-700";
+  }
+};
 
 function CustomPlaceholder({
   width,
@@ -65,6 +80,16 @@ export function Actions({ posts }: ActionsProps) {
             <div className="p-1">
               <Card className="bg-neutral-100">
                 <CardHeader className="font-primary">
+                  <div className="mb-2 flex flex-wrap gap-2">
+                    {post.data.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className={`rounded-full px-2 py-1 text-xs font-semibold ${getTagColor(tag)}`}
+                      >
+                        {t(`actions.${tag.replace(/\s/g, "")}`)}
+                      </span>
+                    ))}
+                  </div>
                   <CardTitle>{post.data.title}</CardTitle>
                   <CardDescription>
                     {post.data.startDate.toLocaleDateString("en-US", {
