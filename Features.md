@@ -5,4 +5,4 @@
 - [x] Donations: At soft launch
 - [x] Blogs: At wide launch
 - [x] SEO: At wide launch
-- [ ] GitHub Actions setup for SSH'ing into the server and re-building on commit: prio 1!
+- [x] GitHub Actions setup for SSH'ing into the server and re-building on commit: prio 1!
