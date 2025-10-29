@@ -19,10 +19,47 @@ import { astroI18n, t } from "astro-i18n";
 
 astroI18n.locale;
 
+interface Subscriber {
+  email: string;
+  name: string;
+  status: "enabled" | "blocklisted";
+  lists: number[];
+}
+
+function submitSubscriber(subscriber: Subscriber): Promise<Subscriber[]> {
+  const headers: Headers = new Headers();
+  headers.set("Content-Type", "application/json");
+
+  const request = new Request("http://listmonk.m4rt.nl/api/subscribers", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(subscriber),
+  });
+
+  return fetch(request)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return data as Subscriber[];
+    });
+}
+
 export function DonationButton() {
+  const [submitStatus, setSubmitStatus] = useState<null | "success" | "error">(
+    null,
+  );
+  const [submitMessage, setSubmitMessage] = useState("");
   const [isSmOrLarger, setIsSmOrLarger] = useState(() =>
     typeof window !== "undefined" ? window.innerWidth >= 640 : true,
   );
+  // State for shadcn inputs
+  const [link, setLink] = useState("");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -55,16 +92,58 @@ export function DonationButton() {
             <Label htmlFor="link" className="sr-only">
               Link
             </Label>
-            <Input id="link" placeholder={t("donationPopup.link")} />
-            <Input id="name" placeholder={t("donationPopup.name")} />
-            <Input id="surname" placeholder={t("donationPopup.surname")} />
+            <Input
+              id="link"
+              placeholder={t("donationPopup.link")}
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+            />
+            <Input
+              id="name"
+              placeholder={t("donationPopup.name")}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input
+              id="surname"
+              placeholder={t("donationPopup.surname")}
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}
+            />
             <Button
               variant="outline"
               size="sm"
               className="font-primary bg-primary-light rounded-2xl text-white hover:bg-blue-400"
+              onClick={async () => {
+                setSubmitStatus(null);
+                setSubmitMessage("");
+                try {
+                  await submitSubscriber({
+                    email: link,
+                    name: name + (surname ? " " + surname : ""),
+                    status: "enabled",
+                    lists: [3], // "Mart naar Zuid-Afrika" list ID
+                  });
+                  setSubmitStatus("success");
+                  setSubmitMessage(t("donationPopup.success"));
+                  setLink("");
+                  setName("");
+                  setSurname("");
+                } catch (e) {
+                  console.error(e);
+                  setSubmitStatus("error");
+                  setSubmitMessage(t("donationPopup.error"));
+                }
+              }}
             >
               {t("donationPopup.submit")}
             </Button>
+            {submitStatus === "success" && (
+              <p className="mt-2 text-sm text-green-600">{submitMessage}</p>
+            )}
+            {submitStatus === "error" && (
+              <p className="mt-2 text-sm text-red-600">{submitMessage}</p>
+            )}
           </div>
           <Separator orientation={isSmOrLarger ? "vertical" : "horizontal"} />
           <div className="grid flex-1 gap-2">

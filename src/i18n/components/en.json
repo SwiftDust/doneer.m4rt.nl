@@ -9,7 +9,9 @@
     "surname": "Doe",
     "submit": "Keep me updated!",
     "donateText": "Donate via iDeal QR-code or iDeal link (for the Netherlands) or PayPal",
-    "bankTransfer": "Paying via bank transfer is also possible: NL53 RABO 0316 8722 02 att. Mart Zielman with subject: 'Donation SHIB South Africa 2027.'"
+    "bankTransfer": "Paying via bank transfer is also possible: NL53 RABO 0316 8722 02 att. Mart Zielman with subject: 'Donation SHIB South Africa 2027.'",
+    "success": "Subscription successful!",
+    "error": "Something went wrong. Please try again."
   },
   "donationProgressBar": {
     "of": "of"
