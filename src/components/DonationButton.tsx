@@ -30,7 +30,7 @@ function submitSubscriber(subscriber: Subscriber): Promise<Subscriber[]> {
   const headers: Headers = new Headers();
   headers.set("Content-Type", "application/json");
 
-  const request = new Request("http://listmonk.m4rt.nl/api/subscribers", {
+  const request = new Request("https://listmonk.m4rt.nl/api/subscribers", {
     method: "POST",
     headers: headers,
     body: JSON.stringify(subscriber),
