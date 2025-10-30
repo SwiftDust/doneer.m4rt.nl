@@ -38,19 +38,14 @@ async function notifyNewPosts() {
 
   for (const post of newPosts) {
     const postName = path.basename(post);
-    const postTitle = fs
-      .readFileSync(post, "utf8")
-      .split("\n")[0]
-      .replace("# ", "")
-      .trim();
 
     const payload = {
       name: postName,
-      subject: `Nieuwe blogpost: ${postTitle}`,
+      subject: `Nieuwe actie van Mart of SHIB voor Zuid-Afrika!`,
       lists: [3],
       type: "regular",
       content_type: "html",
-      body: `<h1>Er is een nieuwe actie online gekomen: ${postTitle}</h1><p>Lees hem nu en zie of jij kan helpen! https://m4rt.nl/blog/${postName.replace(".mdx", "")}<br>Groetjes, Mart :)<br><br>PS: dit bericht is automatisch gegenereerd. Maar als er iets belangrijks gebeurt, bijvoorbeeld een mijlpaal, zal ik je op de hoogte houden!</p>`,
+      body: `<h1>Er is een nieuwe actie online gekomen!/h1><p>Lees hem nu en kijk of jij kan helpen: https://doneer.m4rt.nl/blog/${postName.replace(".mdx", "")}<br>Groetjes, Mart :)<br><br>PS: dit bericht is automatisch gegenereerd. Maar als er iets belangrijks gebeurt, bijvoorbeeld een mijlpaal, zal ik je op de hoogte houden!</p>`,
     };
     try {
       const res = await fetch(API_URL, {
