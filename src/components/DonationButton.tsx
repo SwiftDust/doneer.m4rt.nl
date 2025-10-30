@@ -25,28 +25,27 @@ interface Subscriber {
   status: "enabled" | "blocklisted";
   lists: number[];
 }
-
-function submitSubscriber(subscriber: Subscriber): Promise<Subscriber[]> {
-  const headers: Headers = new Headers();
-  headers.set("Content-Type", "application/json");
-  headers.set("Authorization", `token api:${import.meta.env.TOKEN}`);
-
-  const request = new Request("https://listmonk.m4rt.nl/api/subscribers", {
+function submitSubscriber(subscriber: Subscriber): Promise<any> {
+  return fetch("/api/subscribe", {
     method: "POST",
-    headers: headers,
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
     body: JSON.stringify(subscriber),
+  }).then(async (res) => {
+    const text = await res.text();
+    let data: any;
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      data = text;
+    }
+    if (!res.ok) {
+      throw new Error(JSON.stringify(data));
+    }
+    return data;
   });
-
-  return fetch(request)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      return data as Subscriber[];
-    });
 }
 
 export function DonationButton() {
