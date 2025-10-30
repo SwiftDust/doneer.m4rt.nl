@@ -17,6 +17,8 @@
     "name": "Jan",
     "surname": "Van der Merwe",
     "submit": "Hou my opgedateer!",
+    "success": "Dankie vir jou inskrywing! Jy sal updates ontvang oor my reis. Loer jou e-pos vir die confirmation link ;)",
+    "error": "Iets het verkeerd gegaan. Probeer asseblief weer of kontak my direk.",
     "donateText": "Doneer via iDeal QR-code of iDeal link (Nederland) of PayPal",
     "bankTransfer": "U kan ook deur 'n bankoordrag skenk: NL53 RABO 0316 8722 02 t.b.v. Mart Zielman met as onderwerp: 'Skenking SHIB reis Suid-Afrika 2027.'"
   },

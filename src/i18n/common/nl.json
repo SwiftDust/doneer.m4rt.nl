@@ -17,6 +17,8 @@
     "name": "Naam",
     "surname": "Achternaam",
     "submit": "Hou me op de hoogte!",
+    "success": "Bedankt voor je aanmelding! Je ontvangt updates over mijn reis. Check je e-mail voor de bevestigingslink ;)",
+    "error": "Er is iets misgegaan. Probeer het opnieuw of neem direct contact met me op.",
     "donateText": "Doneren via iDeal QR-code of iDeal link (Nederland) of PayPal",
     "bankTransfer": "Betalen via banktransfer kan ook: NL53 RABO 0316 8722 02 tnv. Mart Zielman met als onderwerp Donatie SHIB-reis Zuid-Afrika 2027."
   },

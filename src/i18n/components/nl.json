@@ -9,9 +9,7 @@
     "surname": "Jansen",
     "submit": "Hou me op de hoogte!",
     "donateText": "Doneren via iDeal QR-code of iDeal link (Nederland) of PayPal",
-    "bankTransfer": "Betalen via banktransfer kan ook: NL53 RABO 0316 8722 02 tnv. Mart Zielman met als onderwerp Donatie SHIB-reis Zuid-Afrika 2027.",
-    "success": "Aanmelding gelukt!",
-    "error": "Er is iets misgegaan. Probeer het opnieuw."
+    "bankTransfer": "Betalen via banktransfer kan ook: NL53 RABO 0316 8722 02 tnv. Mart Zielman met als onderwerp Donatie SHIB-reis Zuid-Afrika 2027."
   },
   "donationProgressBar": {
     "of": "van de"

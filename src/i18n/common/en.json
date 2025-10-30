@@ -17,6 +17,8 @@
     "name": "Name",
     "surname": "Surname",
     "submit": "Keep me updated!",
+    "success": "Thanks for subscribing! You'll receive updates about my journey. Check your e-mail for the confirmation link ;)",
+    "error": "Something went wrong. Please try again or contact me directly.",
     "donateText": "Donate via iDeal QR-code or iDeal link (for the Netherlands) or PayPal",
     "bankTransfer": "Paying via bank transfer is also possible: NL53 RABO 0316 8722 02 att. Mart Zielman with subject: 'Donation SHIB South Africa 2027.'"
   },
