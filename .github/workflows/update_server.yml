@@ -13,4 +13,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             ~/bin/pull-all.sh
-            TOKEN=${{ secrets.TOKEN }} node blogpost-watcher.cjs
+            TOKEN=${{ secrets.TOKEN }} node ~/Documents/doneer.m4rt.nl/blogpost-watcher.cjs
