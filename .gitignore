@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 
 .vercel
+
+# blogpost watcher state file
+blogpost-watcher-state.json

@@ -11,4 +11,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: mart
           password: ${{ secrets.PASSWORD }}
-          script: ~/bin/pull-all.sh
+          script: |
+            ~/bin/pull-all.sh
+            node blogpost-watcher.cjs
