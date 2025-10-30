@@ -29,6 +29,8 @@ interface Subscriber {
 function submitSubscriber(subscriber: Subscriber): Promise<Subscriber[]> {
   const headers: Headers = new Headers();
   headers.set("Content-Type", "application/json");
+  headers.set("Access-Control-Allow-Origin", "*");
+  headers.set("Accept", "application/json");
 
   const request = new Request("https://listmonk.m4rt.nl/api/subscribers", {
     method: "POST",
