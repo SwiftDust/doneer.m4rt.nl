@@ -1,6 +1,6 @@
 ## Doneer.m4rt.nl
 
-This website was improved a lot during the https://midnight.hackclub.com program, this gave me solid motivation to actually finish it!
+This website was improved a lot during the [Midnight](https://midnight.hackclub.com/?code=464) program, this gave me solid motivation to actually finish it!
 
 This is a donation website for a journey I'm making in 2027 to the municipality of Kgetlengrivier, South Africa. I've made this myself using Astro, Tailwind and sprinkled in a bit of Shadcn/ui. Hope you like it!
 
