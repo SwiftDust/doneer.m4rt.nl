@@ -21,7 +21,9 @@ export default defineConfig({
       },
     },
   },
-  adapter: vercel(),
+  adapter: vercel({
+    includeFiles: [`./astro-i18n.config.ts`],
+  }),
   assets: "public",
   integrations: [react(), sitemap(), mdx()],
   markdown: {
@@ -36,3 +38,4 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
 });
+
