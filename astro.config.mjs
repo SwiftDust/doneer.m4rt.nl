@@ -8,6 +8,8 @@ import sitemap from "@astrojs/sitemap";
 
 import mdx from "@astrojs/mdx";
 
+import vercel from "@astrojs/vercel";
+
 export default defineConfig({
   output: "server",
   site: "https://doneer.m4rt.nl",
@@ -19,11 +21,7 @@ export default defineConfig({
       },
     },
   },
-  adapter: node({
-    mode: "standalone",
-    host: "0.0.0.0",
-    port: 4321,
-  }),
+  adapter: vercel(),
   assets: "public",
   integrations: [react(), sitemap(), mdx()],
   markdown: {
